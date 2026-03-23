@@ -281,10 +281,22 @@ describe('style-spec', () => {
         expectTypeOf<{'resampling-transition': {duration: 100}}>().not.toExtend<
             RasterLayerSpecification['paint']
         >();
+        expectTypeOf<{'blend-mode-transition': {duration: 100}}>().not.toExtend<
+            RasterLayerSpecification['paint']
+        >();
         expectTypeOf<{'raster-resampling-transition': {duration: 100}}>().not.toExtend<
             RasterLayerSpecification['paint']
         >();
         expectTypeOf<{'raster-fade-duration-transition': {duration: 100}}>().not.toExtend<
+            RasterLayerSpecification['paint']
+        >();
+    });
+
+    test('RasterLayerSpecification contains blend-mode paint property', () => {
+        expectTypeOf<{'blend-mode': 'multiply'}>().toExtend<
+            RasterLayerSpecification['paint']
+        >();
+        expectTypeOf<{'blend-mode': 'screen'}>().toExtend<
             RasterLayerSpecification['paint']
         >();
     });

@@ -213,6 +213,7 @@
       "source": "raster",
       "source-layer": "source-layer",
       "paint": {
+        "blend-mode": "multiply",
         "resampling": "nearest",
         "raster-resampling": "linear"
       }

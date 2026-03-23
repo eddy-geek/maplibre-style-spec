@@ -7835,6 +7835,37 @@
       },
       "property-type": "data-constant"
     },
+    "blend-mode": {
+      "type": "enum",
+      "default": "normal",
+      "doc": "Controls how this raster layer is blended with layers beneath it.",
+      "values": {
+        "normal": {
+          "doc": "Standard alpha blending (default)."
+        },
+        "multiply": {
+          "doc": "Multiplies the layer colors with the colors beneath, darkening the result."
+        },
+        "screen": {
+          "doc": "Inverts, multiplies, and inverts again, lightening the result."
+        }
+      },
+      "transition": false,
+      "sdk-support": {
+        "basic functionality": {
+          "js": "5.21.0",
+          "android": "https://github.com/maplibre/maplibre-native/issues/2963",
+          "ios": "https://github.com/maplibre/maplibre-native/issues/2963"
+        }
+      },
+      "expression": {
+        "interpolated": false,
+        "parameters": [
+          "zoom"
+        ]
+      },
+      "property-type": "data-constant"
+    },
     "resampling": {
       "type": "enum",
       "doc": "The resampling/interpolation method to use for overscaling, also known as texture magnification filter.\n![Visual comparison of linear resampling versus nearest resampling](assets/resampling.png)",
@@ -8313,6 +8344,37 @@
         ]
       },
       "property-type": "color-ramp"
+    },
+    "blend-mode": {
+      "type": "enum",
+      "default": "normal",
+      "doc": "Controls how this terrain-analysis layer is blended with layers beneath it.",
+      "values": {
+        "normal": {
+          "doc": "Standard alpha blending (default)."
+        },
+        "multiply": {
+          "doc": "Multiplies the layer colors with the colors beneath, darkening the result."
+        },
+        "screen": {
+          "doc": "Inverts, multiplies, and inverts again, lightening the result."
+        }
+      },
+      "transition": false,
+      "sdk-support": {
+        "basic functionality": {
+          "js": "5.21.0",
+          "android": "https://github.com/maplibre/maplibre-native/issues/2963",
+          "ios": "https://github.com/maplibre/maplibre-native/issues/2963"
+        }
+      },
+      "expression": {
+        "interpolated": false,
+        "parameters": [
+          "zoom"
+        ]
+      },
+      "property-type": "data-constant"
     }
   },
   "paint_background": {
