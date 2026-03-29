@@ -4548,7 +4548,7 @@
         }
       },
       "slope": {
-        "doc": "Gets the slope angle of a pixel in degrees (0-90) computed from a `raster-dem` source. Can be used in the `terrain-analysis-color` property of a `terrain-analysis` layer.",
+        "doc": "Gets the slope angle of a pixel in degrees (0-90) computed from a `raster-dem` source. Can be used in the `color` property of a `terrain-analysis` layer.",
         "syntax": {
           "overloads": [
             {
@@ -4568,7 +4568,7 @@
         }
       },
       "aspect": {
-        "doc": "Gets the aspect (compass direction the slope faces) of a pixel in degrees (0-360, 0=north) computed from a `raster-dem` source. Can be used in the `terrain-analysis-color` property of a `terrain-analysis` layer.",
+        "doc": "Gets the aspect (compass direction the slope faces) of a pixel in degrees (0-360, 0=north) computed from a `raster-dem` source. Can be used in the `color` property of a `terrain-analysis` layer.",
         "syntax": {
           "overloads": [
             {
@@ -7846,6 +7846,9 @@
         "multiply": {
           "doc": "Multiplies the layer colors with the colors beneath, darkening the result."
         },
+        "soft-multiply": {
+          "doc": "Softer, less darkening version of multiply that does not crush midtones."
+        },
         "screen": {
           "doc": "Inverts, multiplies, and inverts again, lightening the result."
         }
@@ -8260,7 +8263,7 @@
     }
   },
   "paint_terrain-analysis": {
-    "terrain-analysis-attribute": {
+    "attribute": {
       "type": "enum",
       "values": {
         "elevation": {
@@ -8290,7 +8293,7 @@
       },
       "property-type": "data-constant"
     },
-    "terrain-analysis-opacity": {
+    "opacity": {
       "type": "number",
       "default": 1,
       "minimum": 0,
@@ -8312,7 +8315,7 @@
       },
       "property-type": "data-constant"
     },
-    "terrain-analysis-color": {
+    "color": {
       "type": "color",
       "doc": "Defines the color of each pixel based on the selected attribute. Use `[\"elevation\"]` for elevation, `[\"slope\"]` for slope, or `[\"aspect\"]` for aspect as the interpolation input.",
       "example": [
@@ -8355,6 +8358,9 @@
         },
         "multiply": {
           "doc": "Multiplies the layer colors with the colors beneath, darkening the result."
+        },
+        "soft-multiply": {
+          "doc": "Softer, less darkening version of multiply that does not crush midtones."
         },
         "screen": {
           "doc": "Inverts, multiplies, and inverts again, lightening the result."
