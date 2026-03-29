@@ -1,7 +1,7 @@
 {
-  "name": "@maplibre/maplibre-gl-style-spec",
+  "name": "@eslopemap/maplibre-gl-style-spec",
   "description": "a specification for maplibre styles",
-  "version": "24.7.0",
+  "version": "24.7.1",
   "author": "MapLibre",
   "keywords": [
     "mapbox",
@@ -17,6 +17,9 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rollup --configPlugin @rollup/plugin-typescript -c rollup.config.ts && cp ./src/reference/v8.json ./dist/latest.json",
     "generate-style-spec": "node --no-warnings --loader ts-node/esm build/generate-style-spec.ts",
